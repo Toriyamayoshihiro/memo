@@ -17,6 +17,7 @@ class CreateMemosTable extends Migration
             $table->id();
             $table->foreignId('category_id')->constrained()->cascadeOnDelete();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->date('worked_type');
             $table->date('worked_at');
             $table->text('content');
             $table->string('image_path')->nullable();
