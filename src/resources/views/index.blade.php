@@ -16,9 +16,8 @@
                 @foreach($categories as $category)
                     <option
                         value="{{ $category->id }}"
-                        @selected(request('category') == $category->id)
-                    >
-                        {{ $category->name }}
+                        @selected(request('category') == $category)>
+                        {{ $category->category }}
                     </option>
                 @endforeach
         </select>
@@ -40,37 +39,28 @@
     @foreach($memos as $memo)
 
         <tr>
-
             <td>
                 {{ $memo->worked_at->format('Y/m/d') }}
             </td>
-
             <td>
                 {{ $memo->work_type }}
             </td>
-
             <td>
-                {{ $memo->category->name }}
+                {{ $memo->category->category }}
             </td>
-
             <td>
                 {{ $memo->keywords }}
             </td>
             <td>
                  {{ \Illuminate\Support\Str::limit($memo->content, 30, '...') }}
             </td>
-
             <td>
                 <a href="/memo/{{$memo->id}}">
                     詳細
                 </a>
             </td>
-
         </tr>
-
         @endforeach
-
     </table>
-
 </div>
 @endsection

@@ -10,7 +10,7 @@
         <h2>新規メモ作成</h2>
     </div>
 
-    <form action="/memorize" method="post" enctype="multipart/form-data" class="memo-form">
+    <form action="/memo/create" method="post" enctype="multipart/form-data" class="memo-form">
         @csrf
 
         <div class="form__group">
@@ -35,7 +35,7 @@
                 <option value="">カテゴリーを選択してください</option>
                 @foreach($categories as $category)
                     <option value="{{ $category->id }}" @selected(old('category_id') == $category->id)>
-                        {{ $category->name }}
+                        {{ $category->category }}
                     </option>
                 @endforeach
             </select>
@@ -75,4 +75,3 @@
 </div>
 
 @endsection
-</div>

@@ -13,14 +13,15 @@ use App\Http\Controllers\MemoController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::middleware(['auth','verified'])->group(function () {
+    Route::get('/', [MemoController::class, 'index']);
 
-Route::get('/', [MemoController::class, 'index']);
+    Route::get('/memo/create', [MemoController::class, 'getMemorize']);
+    Route::post('/memo/create',[MemoController::class,'postMemorize']);
 
-Route::get('/memo/create', [MemoController::class, 'getMemorize']);
-Route::post('/memo/create',[MemoController::class,'memorize']);
+    Route::get('/memo/{memo_id}',[MemoController::class,'detail'])->name('memo.detail');
 
-Route::get('/memo/{memo_id}',[MemoController::class,'detail']);
-
-Route::get('/memo/{memo_id}/edit',[MemoController::class,'edit_display']);
-Route::post('/memo/{memo_id}/edit',[MemoController::class,'edit']);
+    Route::get('/memo/{memo_id}/edit',[MemoController::class,'edit_display']);
+    Route::post('/memo/{memo_id}/edit',[MemoController::class,'edit']);
+});
 

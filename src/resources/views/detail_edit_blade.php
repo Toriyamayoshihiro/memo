@@ -15,11 +15,10 @@
 </div>
 
 <form
-    action="/detail/{{ $memo->id }}/edit"
+    action="/memo/{{ $memo->id }}/edit"
     method="post"
     enctype="multipart/form-data"
-    class="memo-form"
->
+    class="memo-form">
     @csrf
     @method('PATCH')
 
@@ -29,8 +28,7 @@
         <input
             type="date"
             name="worked_at"
-            value="{{ old('worked_at', $memo->worked_at->format('Y-m-d')) }}"
-        >
+            value="{{ old('worked_at', $memo->worked_at->format('Y-m-d')) }}">
 
         @error('worked_at')
             <div class="form__error">{{ $message }}</div>
@@ -43,8 +41,7 @@
         <input
             type="text"
             name="work_type"
-            value="{{ old('work_type', $memo->work_type) }}"
-        >
+            value="{{ old('work_type', $memo->work_type) }}">
 
         @error('work_type')
             <div class="form__error">{{ $message }}</div>
@@ -62,9 +59,7 @@
                     value="{{ $category->id }}"
                     @selected(
                         old('category_id', $memo->category_id)
-                        == $category->id
-                    )
-                >
+                        == $category->id)>
                     {{ $category->name }}
                 </option>
 
@@ -83,8 +78,7 @@
         <input
             type="text"
             name="keywords"
-            value="{{ old('keywords', $memo->keywords) }}"
-        >
+            value="{{ old('keywords', $memo->keywords) }}">
 
         @error('keywords')
             <div class="form__error">{{ $message }}</div>
@@ -96,8 +90,7 @@
 
         <textarea
             name="content"
-            rows="10"
-        >{{ old('content', $memo->content) }}</textarea>
+            rows="10">{{ old('content', $memo->content) }}</textarea>
 
         @error('content')
             <div class="form__error">{{ $message }}</div>
@@ -111,8 +104,7 @@
             <img
                 src="{{ Storage::url($memo->image_path) }}"
                 alt="memo image"
-                width="300"
-            >
+                width="300">
         @else
             <p>画像なし</p>
         @endif
@@ -120,12 +112,9 @@
 
     <div class="form__group">
         <label>写真変更</label>
-
         <input
             type="file"
-            name="image"
-        >
-
+            name="image">
         @error('image')
             <div class="form__error">{{ $message }}</div>
         @enderror
@@ -138,7 +127,7 @@
     </div>
 
 </form>
-```
+
 
 </div>
 
