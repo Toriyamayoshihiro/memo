@@ -21,7 +21,9 @@ Route::middleware(['auth','verified'])->group(function () {
 
     Route::get('/memo/{memo_id}',[MemoController::class,'detail'])->name('memo.detail');
 
-    Route::get('/memo/{memo_id}/edit',[MemoController::class,'edit_display']);
-    Route::post('/memo/{memo_id}/edit',[MemoController::class,'edit']);
+    Route::get('/memo/{memo_id}/edit',[MemoController::class,'getEdit']);
+    Route::patch('/memo/{memo_id}/edit',[MemoController::class,'postEdit']);
+
+    Route::delete('memo/delete/{memo_id}',[MemoController::class,'delete']);
 });
 

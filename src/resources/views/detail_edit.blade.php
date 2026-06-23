@@ -9,7 +9,6 @@
 
 <div class="memo-edit">
 
-```
 <div class="memo-edit__heading">
     <h2>メモ編集</h2>
 </div>
@@ -26,7 +25,7 @@
         <label>作業日</label>
 
         <input
-            type="date"
+            type="text"
             name="worked_at"
             value="{{ old('worked_at', $memo->worked_at->format('Y-m-d')) }}">
 
@@ -55,12 +54,11 @@
 
             @foreach($categories as $category)
 
-                <option
+              <option
                     value="{{ $category->id }}"
-                    @selected(
-                        old('category_id', $memo->category_id)
-                        == $category->id)>
-                    {{ $category->name }}
+                    {{ old('category_id', $memo->category_id) == $category->id ? 'selected' : '' }}
+                >
+                    {{ $category->category }}
                 </option>
 
             @endforeach
