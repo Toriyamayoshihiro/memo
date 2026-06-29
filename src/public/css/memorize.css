@@ -1,0 +1,95 @@
+.memo-create {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 40px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.memo-create__heading {
+    margin-bottom: 35px;
+}
+
+.memo-create__heading h2 {
+    font-size: 28px;
+    font-weight: bold;
+    border-left: 6px solid #222;
+    padding-left: 12px;
+}
+
+.memo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.form__group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__label {
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form__group input[type="text"],
+.form__group select,
+.form__group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    background: #fff;
+    transition: .2s;
+    box-sizing: border-box;
+}
+
+.form__group input[type="text"]:focus,
+.form__group select:focus,
+.form__group textarea:focus {
+    border-color: #333;
+    outline: none;
+}
+
+.form__group textarea {
+    resize: vertical;
+    min-height: 220px;
+    line-height: 1.7;
+}
+
+.form__group input[type="file"] {
+    padding: 8px 0;
+}
+
+.form__error {
+    margin-top: 6px;
+    color: #d93025;
+    font-size: 13px;
+}
+
+.form__button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form__button button {
+    width: 220px;
+    height: 48px;
+    border: none;
+    border-radius: 6px;
+    background: #222;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.form__button button:hover {
+    opacity: .85;
+}

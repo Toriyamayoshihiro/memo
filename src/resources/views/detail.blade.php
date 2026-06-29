@@ -23,7 +23,7 @@
         </tr>
         <tr>
             <th>カテゴリー</th>
-            <td>{{ $memo->category->name }}</td>
+            <td>{{ $memo->category->category }}</td>
         </tr>
         <tr>
             <th>検索キーワード</th>

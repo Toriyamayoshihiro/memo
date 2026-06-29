@@ -1,0 +1,90 @@
+.index_content {
+    max-width: 1100px;
+    margin: 56px auto;
+    padding: 0 24px;
+}
+
+.index_heading {
+    margin-bottom: 24px;
+}
+
+.index_heading h2 {
+    font-size: 28px;
+    font-weight: bold;
+    border-left: 6px solid #222;
+    padding-left: 14px;
+}
+
+.index_content form {
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.index_content select {
+    width: 220px;
+    height: 42px;
+    padding: 0 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    font-size: 14px;
+}
+
+.index_content button {
+    height: 42px;
+    padding: 0 20px;
+    border: none;
+    border-radius: 6px;
+    background-color: #222;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.index_content button:hover {
+    opacity: 0.8;
+}
+
+.memo_table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.memo_table th {
+    padding: 16px 12px;
+    background-color: #333;
+    color: #fff;
+    font-size: 14px;
+    text-align: left;
+}
+
+.memo_table td {
+    padding: 16px 12px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.memo_table tr:last-child td {
+    border-bottom: none;
+}
+
+.memo_table tr:hover {
+    background-color: #f7f7f7;
+}
+
+.memo_table a {
+    color: #2563eb;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.memo_table a:hover {
+    text-decoration: underline;
+}

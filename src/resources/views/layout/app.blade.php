@@ -18,8 +18,9 @@
       <h1 class="header__heading">
         <a href="/">APP</a>
       </h1>
+      @auth
       <form class="header__search" action="/" method="get">
-          <input class="search" type="text" name="keyword" placeholder="何をお探しですか" value="{{old('keyword')}}">
+          <input class="search" type="text" name="keyword" placeholder="何をお探しですか" value="{{request('keyword')}}">
           <button type="submit" class="search_button"></button>
       </form>
         <div class="header__actions">
@@ -28,7 +29,9 @@
                 <button class="header__link">ログアウト</button>
           </form>
           <a href="/memo/create" class="header__button">新規メモ作成</a>
+      @endauth
  </div>
+</div>
 </header>
  @yield('content')
 </body>
